@@ -1,17 +1,17 @@
 <template>
   <div class="music">
     <h1>My favorite songs</h1>
-    <Track/>
+    <Table/>
   </div>
 </template>
 
 <script>
-import Track from '@/components/Table.vue'
+import Table from '@/components/Table.vue'
 
 export default {
   name: 'music',
   components: {
-    Track
+    Table
   }
 }
 </script>
