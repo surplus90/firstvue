@@ -1,29 +1,24 @@
-# music
+## vue 스터디
 
-## Project setup
-```
-npm install
-```
+### 1차 목표 
+- 검색 필터 구현 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 2차 목표 
+- axios 사용법 
+- sort 구현하기 
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### 3차 목표 
+- data-table 기능 구현 
+    * 구현 기능 
+        1. rest-api 데이터 가져오기 
+        2. 테이블 데이터 뿌리기 
+        3. 검색 기능 추가 하기
+        4. 칼럼 sort 기능 구현하기 
+        4. 페이징 구현하기 
 
-### Run your tests
-```
-npm run test
-```
+### 4차 목표 
+- 에니메이션 구현하기 
+    * vue transition 사용법 익히기 
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 5차 목표
+- 미정 아마 기본 HTML , CSS 기초 

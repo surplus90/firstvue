@@ -1,17 +1,17 @@
 <template>
   <div class="music">
-    <h1>My favorite songs</h1>
-    <Track/>
+    <h1>search</h1>
+    <search-list></search-list>
   </div>
 </template>
 
 <script>
-import Track from '@/components/Track.vue'
+import SearchList from '@/components/SearchList.vue'
 
 export default {
   name: 'music',
   components: {
-    Track
+    SearchList
   }
 }
 </script>
