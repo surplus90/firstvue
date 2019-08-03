@@ -4,7 +4,7 @@
 - 검색 필터 구현 
 
 ### 2차 목표 
-- axios 사용법 
+- [axios 사용법](https://www.npmjs.com/package/vue-axios)
 - sort 구현하기 
 
 ### 3차 목표 
