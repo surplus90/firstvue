@@ -1,7 +1,7 @@
 <template>
   <div class="track">
     <b-container class="bv-example-row bv-example-row-flex-cols">
-        <b-row align-v="center" class="w-50 m-auto">
+        <b-row align-v="center" class="w-80 m-auto">
             <b-col cols="12" class="sticky-top mt-3 mb-3">
                 result :: {{search.length}}
                 <b-input-group>
@@ -47,57 +47,64 @@
 * @description Rest api 로 받아온 엘범 정보를 표시하고 키값과 검색어로 실시간 필터링 하는 컴포넌트
 */
 export default {
-  name: 'SearchList',
-  data() {
-    return {
-        searchValue:"",
-        dropdownListType:"",
-        items: [
-            {
-                albumId: 1,
-                id: 1,
-                thumbnailUrl: "",
-                title: "",
-                url: "",
-            },
-        ]
-    }
-  },
-  created() {
-    console.log("created::",this);
-    // this.axios.get(api).then((response) => {
-    //     console.log(response.data)
-    // });
-    
-    this.$http.get("https://jsonplaceholder.typicode.com/photos").then((response) => {
-        console.log(response.data);
-        this.items = response.data.splice(0,100);
-    });
-  },    
-  methods: {
-    /**
-     * @author greenandsnow@gmail.com
-     * @since 2019년 08월 03일
-     * @event {click} - 드롭다운 클릭시 호출된다. 
-     * @param {string} - 드롭다운 클릭시 받아오는 데이터로 this.items 의 키값 이다. 
-     * @param {Event} type - 이벤트 객체 
-     * @description 드롭다운 클릭시 호출되어  dropdownListType 값을 교체 한다
-     */
-    dropdownListClick(type,event){
-        this.dropdownListType = type;
-    }
-  },
-  mounted() {
-  },
-  computed: {
-    dropdownList(){
-        return Object.keys(this.items[0]);
+    name: 'SearchList',
+    data() {
+        return {
+            searchValue:"",
+            dropdownListType:"",
+            // items: [
+            //     {
+            //         albumId: 1,
+            //         id: 1,
+            //         thumbnailUrl: "",
+            //         title: "",
+            //         url: "",
+            //     },
+            // ]
+        }
     },
-    search() {
-        if(this.dropdownListType=="" || this.searchType=="") return this.items;
-        return this.items.filter(key=>(typeof key[this.dropdownListType] == "string") ? key[this.dropdownListType].startsWith(this.searchValue): key[this.dropdownListType] == this.searchValue);
+    props: {
+        // String | Number | Boolean | Function | Object | Array | Symbol 를 type 로 사용 가능 
+        items: {
+            type:Array,
+            default(){ return [];},
+        },
+    },
+    created() {
+        console.log("created::",this);
+        // // this.axios.get(api).then((response) => {
+        // //     console.log(response.data)
+        // // });
+        
+        // this.$http.get("https://jsonplaceholder.typicode.com/photos").then((response) => {
+        //     console.log(response.data);
+        //     this.items = response.data.splice(0,100);
+        // });
+    },    
+    methods: {
+        /**
+         * @author greenandsnow@gmail.com
+         * @since 2019년 08월 03일
+         * @event {click} - 드롭다운 클릭시 호출된다. 
+         * @param {string} - 드롭다운 클릭시 받아오는 데이터로 this.items 의 키값 이다. 
+         * @param {Event} type - 이벤트 객체 
+         * @description 드롭다운 클릭시 호출되어  dropdownListType 값을 교체 한다
+         */
+        dropdownListClick(type,event){
+            this.dropdownListType = type;
+        }
+    },
+    mounted() {
+    },
+    computed: {
+        dropdownList(){
+            return Object.keys(this.items[0]);
+        },
+        search() {
+            if(this.dropdownListType=="" || this.searchType=="") return this.items;
+            return this.items.filter(key=>(typeof key[this.dropdownListType] == "string") ? key[this.dropdownListType].startsWith(this.searchValue): key[this.dropdownListType] == this.searchValue);
+        }
     }
-  }
 }
 </script>
 

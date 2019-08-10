@@ -18,7 +18,7 @@
 
 ### 4차 목표 
 - 에니메이션 구현하기 
-    * vue transition 사용법 익히기 
+    * vue transition 사용법 익히기 - example 참조 
 
 ### 5차 목표
 - 미정 아마 기본 HTML , CSS 기초 
