@@ -129,8 +129,8 @@ export default {
                 }else{
                     return arr.sort(sortASCFn).reverse();
                 }
-                console.error('type is not defind >>',type);
-                return new Error('type is not defind'); 
+                console.error('type is not defined >>',type);
+                return new Error('type is not defined'); 
             }else{
                 console.error('type is not array');
                 return new Error('type is not array');
