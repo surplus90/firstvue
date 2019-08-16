@@ -1,7 +1,7 @@
 <template>
   <div class="music">
     <h1>search</h1>
-    <search-list :items="items"></search-list>
+    <search-list :items="items" sort='desc'></search-list>
   </div>
 </template>
 

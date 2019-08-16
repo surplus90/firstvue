@@ -21,4 +21,8 @@
     * vue transition 사용법 익히기 - example 참조 
 
 ### 5차 목표
-- 미정 아마 기본 HTML , CSS 기초 
+- 컴포넌트 통신 방법
+    * props, event
+    * eventBus
+    * Vuex
+    * ref 속성 이용한 통신

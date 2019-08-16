@@ -5,6 +5,11 @@
             <b-col cols="12" class="sticky-top mt-3 mb-3">
                 result :: {{search.length}}
                 <b-input-group>
+                    <b-input-group-prepend is-text>
+                        <b-form-checkbox class="mr-n2" name="check-button" v-model="sort" switch>
+                            <span class="sr-only"></span>{{sort? 'asc' : 'desc'}}
+                        </b-form-checkbox>
+                    </b-input-group-prepend>
                     <b-dropdown slot="append" :text="dropdownListType" variant="outline-info">
                         <b-dropdown-item v-for="(list, index) in dropdownList" :key="index" @click="dropdownListClick(list, $event)">{{list}}</b-dropdown-item>
                     </b-dropdown>
@@ -52,6 +57,7 @@ export default {
         return {
             searchValue:"",
             dropdownListType:"",
+            sort:true,
             // items: [
             //     {
             //         albumId: 1,
@@ -92,6 +98,43 @@ export default {
          */
         dropdownListClick(type,event){
             this.dropdownListType = type;
+        },
+        /**
+        * @author greenandsnow@gmail.com
+        * @version 0.1
+        * @since 2019년 08월 16일
+        * @param {Array} arr - 정렬 대상 배열 
+        * @param {String} [type=true] - 정렬 방식, true : asc, false: desc 두종류 
+        * @param {String} [key=id] - 정렬 기준 키값 
+        * @returns {string} - 정렬된 배열 값을 리턴한다. 
+        * @description 정렬 방식은 
+        * desc 는 두가지 방식으로 구현 가능하다. 
+        * 1. sort 함수 하나로 asc, desc 둘다 구현 가능하다. 
+        * 그것을 구현 한것이 sortASCFn, sortDESCFn 이다. 
+        * 
+        * 2. desc 를 다르게 정렬 하는 방법은 sort().reverse() 로 구현 하는 방법이다. 
+        * <code><pre></pre></code>
+        */
+        sortResult(arr,type=true,key='id'){
+            const sortASCFn = (a,b)=>{
+                return a[key] - b[key];
+            }
+            //참고로 만든 함수 
+            const sortDESCFn = (a,b)=>{
+                return b[key] - a[key];
+            }
+            if(Array.isArray(arr)){
+                if(type){
+                    return arr.sort(sortASCFn);
+                }else{
+                    return arr.sort(sortASCFn).reverse();
+                }
+                console.error('type is not defind >>',type);
+                return new Error('type is not defind'); 
+            }else{
+                console.error('type is not array');
+                return new Error('type is not array');
+            }
         }
     },
     mounted() {
@@ -101,8 +144,23 @@ export default {
             return Object.keys(this.items[0]);
         },
         search() {
-            if(this.dropdownListType=="" || this.searchType=="") return this.items;
-            return this.items.filter(key=>(typeof key[this.dropdownListType] == "string") ? key[this.dropdownListType].startsWith(this.searchValue): key[this.dropdownListType] == this.searchValue);
+            if(this.dropdownListType == "" || this.searchType == "" || this.searchValue == "") return this.sortResult(this.items, this.sort);
+
+            //방법 1
+            // return this.sortResult(
+            //     this.items.filter(key=>(typeof key[this.dropdownListType] == "string") ? key[this.dropdownListType].startsWith(this.searchValue): key[this.dropdownListType] == this.searchValue),
+            //     this.sort
+            // );
+
+            //방법 2
+            if(this.sort){
+                return this.items.filter(key=>(typeof key[this.dropdownListType] == "string") ? key[this.dropdownListType].startsWith(this.searchValue): key[this.dropdownListType] == this.searchValue)
+                .sort();
+            }else{
+                return this.items.filter(key=>(typeof key[this.dropdownListType] == "string") ? key[this.dropdownListType].startsWith(this.searchValue): key[this.dropdownListType] == this.searchValue)
+                .sort()
+                .reverse();
+            }
         }
     }
 }

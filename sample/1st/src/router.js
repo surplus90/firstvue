@@ -21,12 +21,12 @@ export default new Router({
     {
       path: '/2st',
       name: '2st',
-      component: () => import(/* webpackChunkName: "about" */ './views/St2.vue')
+      component: () => import(/* webpackChunkName: "st2" */ './views/St2.vue')
     },
     {
       path: '/3st',
       name: '3st',
-      component: () => import('./views/St3.vue')
+      component: () => import(/* webpackChunkName: "st3" */ './views/St3.vue')
     }
   ]
 })
