@@ -123,6 +123,7 @@ export default {
             const sortDESCFn = (a,b)=>{
                 return b[key] - a[key];
             }
+            
             if(Array.isArray(arr)){
                 if(type){
                     return arr.sort(sortASCFn);
