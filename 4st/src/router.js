@@ -30,6 +30,11 @@ export default new Router({
       path: '/css',
       name: 'css',
       component: () => import('./views/Css.vue')
+    },
+    {
+      path: '/css2',
+      name: 'css2',
+      component: () => import('./views/Css2.vue')
     }
   ]
 })

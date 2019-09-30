@@ -6,7 +6,7 @@
       <span>bcd</span>
       <span>cdefg</span>
     </div>
-    <h4>
+    <h4>absolute</h4>
       <div class="sooyoon2">
         <div class="ca">a</div>
         <div class="cb">b</div>
@@ -16,7 +16,6 @@
           <div class="dd">dd</div>
         </div>
       </div>
-    </h4>
   </div>
 </template>
 

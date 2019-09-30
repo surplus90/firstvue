@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/music">Music</router-link> | 
-      <router-link to="/css">Css</router-link>
+      <router-link to="/css">Css</router-link> | 
+      <router-link to="/css2">Css2</router-link>
     </div>
     <router-view/>
   </div>
