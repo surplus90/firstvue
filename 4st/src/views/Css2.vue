@@ -1,5 +1,7 @@
 <template>
   <div class="sooyoon">
+    <a href="https://heropy.blog/2018/01/31/sass/">scss</a> | 
+    <a href="https://sass-guidelin.es/ko/">scss</a>
     <h4>display block</h4>
     <p>div, p 등이 block 태그 이다.</p>
     <div class="ba-1 mt-10">block</div>
@@ -31,7 +33,7 @@
     </ul>
     <h4>flex</h4>
     <h4>grid</h4>
-    <br/>>
+    <br/>
     <h4>static</h4>
     <p>static 속성은 기본 값으로 자신의 위치를 기준으로 잡는다. 하지만 위치 이동은 불가능 하다.</p>
     <h4>relative</h4>
