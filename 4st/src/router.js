@@ -35,6 +35,11 @@ export default new Router({
       path: '/css2',
       name: 'css2',
       component: () => import('./views/Css2.vue')
+    },
+    {
+      path: '/homework',
+      name: 'homework',
+      component: () => import('./views/Homework.vue')
     }
   ]
 })
