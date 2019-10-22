@@ -41,9 +41,8 @@
         </div>
     </div>
 </template>
-
 <style lang="scss" scoped>
-
+/* grid 안쓰고 레이아웃을 만드는게 첫번째 과제 입니다. grid는 나중에 쓸껍니다. */
 .ba-1 {
     border: 1px solid black;
 }
