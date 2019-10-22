@@ -66,7 +66,10 @@
                 <div class="ba-1">9</div>
                 <div class="ba-1">10</div>
             </div>
-            <div class="ba-1 footer">FOOTER</div>
+            <div class="ba-1 footer">
+                <button class="btn cancel">취소</button>
+                <button class="btn default">확인</button>
+            </div>
         </div>
     </div>
 </template>
@@ -168,6 +171,22 @@
 .texto-horizon {
     border: 1px dotted black;
     font-size: x-small;
+}
+
+.btn {
+  border: black;
+  border-radius: 4px;
+  padding: 1px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: small;
+  .cancel {
+      background-color: gray;
+  }
+  .default {
+      background-color: blue;
+  }
 }
 
 </style>
