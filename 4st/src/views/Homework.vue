@@ -307,7 +307,7 @@ absolute 나  relative 에서 기본으로 돌아가는 경우에만 사용 합�
   text-decoration: none;
   display: inline-block;
   font-size: small;
-  &.cancel {
+  .cancel {
       background-color: gray;
   }
   .default {
