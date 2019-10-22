@@ -3,33 +3,62 @@
         <div>
             <div class="ba-1 header">HEADER</div>
             <div class="body">
-                <div class="ba-1 scroll-x">
-                    <div class="ba-1 box-1-sm">1</div>
-                    <div class="ba-1 box-1-sm">2</div>
-                    <div class="ba-1 box-1-sm">3</div>
-                    <div class="ba-1 box-1-sm">4</div>
-                    <div class="ba-1 box-1-sm">5</div>
-                    <div class="ba-1 box-1-sm">6</div>
+                <div class="ba-1 box-1 scroll-x">
+                    <div class="ba-1">1</div>
+                    <div class="ba-1">2</div>
+                    <div class="ba-1">3</div>
+                    <div class="ba-1">4</div>
+                    <div class="ba-1">5</div>
+                    <div class="ba-1">6</div>
                 </div>
-                <div class="ba-1 scroll-x">
-                    <div class="ba-1 box-1-sm">1</div>
-                    <div class="ba-1 box-1-sm">2</div>
-                    <div class="ba-1 box-1-sm">3</div>
-                    <div class="ba-1 box-1-sm">4</div>
-                    <div class="ba-1 box-1-sm">5</div>
-                    <div class="ba-1 box-1-sm">6</div>
+                <div class="ba-1 box-1 scroll-x">
+                    <div class="ba-1">1</div>
+                    <div class="ba-1">2</div>
+                    <div class="ba-1">3</div>
+                    <div class="ba-1">4</div>
+                    <div class="ba-1">5</div>
+                    <div class="ba-1">6</div>
                 </div>
-                <div class="ba-1 scroll-x">
-                    <div class="ba-1 box-1-sm">
+                <div class="ba-1 box-1 scroll-x">
+                    <div class="ba-1">
                         <div class="texto-vertical">HEADER1</div>
                         <div></div>
                     </div>
-                    <div class="ba-1 box-1-sm">
+                    <div class="ba-1">
                         <div class="texto-vertical">HEADER2</div>
                         <div></div>
                     </div>
                 </div>
-                <div class="ba-1"></div>
+                <div class="ba-1 box-2">
+                    <div class="scroll-y">
+                        <div class="ba-1">
+                            <div class="texto-horizon">HEADER1</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                        <div class="ba-1">
+                            <div class="texto-horizon">HEADER2</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                        <div class="ba-1">
+                            <div class="texto-horizon">HEADER3</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                    </div>
+                    <div class="scroll-y">
+                        <div class="ba-1">
+                            <div class="texto-horizon">HEADER1</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                        <div class="ba-1">
+                            <div class="texto-horizon">HEADER2</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                        <div class="ba-1">
+                            <div class="texto-horizon">HEADER3</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="ba-1">5</div>
                 <div class="ba-1">6</div>
                 <div class="ba-1">7</div>
@@ -96,19 +125,35 @@
     position: static;
 }
 
-.box-1 {
-    height: 100px;
+.box-1{
+    > div {
+        width: 80vw;
+        height: 100px;
+        display: inline-block;
+        color: pink;
+    }
 }
 
-.box-1-sm {
-    width: 80vw;
-    height: 100px;
-    display: inline-block;
+.box-2{
+    > div {
+        width: 50%;
+        height: 150px;
+        display: inline-block;
+    }
+    .box-2-sm {
+        height: 100px;
+    }
 }
 
 .scroll-x {
     overflow: hidden;
     overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.scroll-y {
+    overflow: hidden;
+    overflow-y: scroll;
     white-space: nowrap;
 }
 
@@ -118,6 +163,11 @@
     font-size: x-small;
     writing-mode: vertical-rl;
     text-orientation: upright;
+}
+
+.texto-horizon {
+    border: 1px dotted black;
+    font-size: x-small;
 }
 
 </style>
