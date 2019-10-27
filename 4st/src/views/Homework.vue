@@ -144,9 +144,6 @@ export default {
         }
     },
     methods: {
-        openModal () {
-            this.isModal = true
-        }
     },
 }
 </script>
