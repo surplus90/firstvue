@@ -2,9 +2,9 @@
     <div>
         <div>
             <header class="header ba-1">
-                <div class="modal-btn-box">
+                <!-- <div class="modal-btn-box"> -->
                     <button class="btn btn-default" @click="isModal=true">modal</button>
-                </div>
+                <!-- </div> -->
                 HEADER
             </header>
             <section class="custom-section">
@@ -290,6 +290,88 @@ absolute 나  relative 에서 기본으로 돌아가는 경우에만 사용 합�
 
 */
 
+/*
+1. footer에 버튼 레이아웃
+2. header에 modal 버튼
+: 버튼 세로 정렬이 center로 안가네요ㅠㅠ 같이 봐주셨으면 합니다.
+=> modal-btn-box 같은 경우 버튼 세로 정렬 하려고 만든것 같습니다. 
+이상태 에서 
+
+솔루션 1 
+position: absolute;
+float: left;
+
+이 두가지 속성 모두 레이아웃에 관계된 것이라 같이 사용하는것을 추천 하지 않습니다. 
+하나만 사용해서 위치를 잡으시길 바랍니다. 
+.modal-btn-box{
+    float: left;
+    line-height: 30px; // header 의 높이값과 일치 시켜 줍니다. 
+}
+
+이러면 상하 정렬은 됩니다. 
+
+또는 
+.header { position: relative } 추가 하거나 별도 단일 css 만들어서 추가 해주고 
+.modal-btn-box{
+    position: absolute;
+    line-height: 30px; // header 의 높이값과 일치 시켜 줍니다. 
+}
+
+또는 
+.modal-btn-box{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+이건 모달 가운데 정렬 할때와 같습니다. 
+
+솔루션 2 
+버튼만 있다고 가정 하겠습니다. .modal-btn-box 이건 없는 걸로 취급 
+이러면 문제가 버튼이 너무 커집니다. 
+.btn {
+    width: 100%;
+    height: 100%;
+}
+
+이 두개를 삭제 합니다. 이제 보니 있으면 안되는 게 기본으로 들어가 있네요 
+width, height 는 필요시 나중에 추가하는 형태로 갑니다. 
+
+저 두개를 빼면 버튼이 작게 됩니다. 이 상테에서 버튼의 크기는 padding 으로 조절 합니다. 
+
+그리고 위 방법에서 
+.header { position: relative }
+.header .btn-modal{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+으로 해도 됩니다. 
+
+3. modal box 생성
+: 이거슨 사실 구글링해서 참고해서 만들었습니다 (복붙...) 아직 혼자 힘으로 그냥 만들지는 못하겠어요.
+=> modal 자체는 혼자 힘으로 하기는 힘듭니다. 하지만 구글링을 잘하실꺼라 생각해서 ㅎㅎ 
+이것도 정석 같은게 있는지라 나중에는 잘하게 될것 입니다. 
+일단 문제점은 모달이 반응형으로 동작하네요 
+모달은 화면 크기가 변해도 일정 크기를 유지 해야 합니다. 모달 고정 사이즈로 한번 해보기실 바랍니다. 
+
+모달 가운데 정렬 힌트는 다음과 같습니다. 
+
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+or 
+
+position: absolute;
+top: 50%;
+left: 0;
+margin: 0 auto;
+transform: translate(0, -50%);
+*/
 .header {
     height: 30px;
     line-height: 30px;
