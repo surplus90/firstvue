@@ -1,8 +1,13 @@
 <template>
     <div>
         <div>
-            <div class="ba-1 header">HEADER</div>
-            <div class="body">
+            <header class="header ba-1">
+                <div class="modal-btn-box">
+                    <button class="btn btn-default" @click="isModal=true">modal</button>
+                </div>
+                HEADER
+            </header>
+            <section class="custom-section">
                 <div class="ba-1 box-1 scroll-x">
                     <div class="ba-1">1</div>
                     <div class="ba-1">2</div>
@@ -21,58 +26,131 @@
                 </div>
                 <div class="ba-1 box-1 scroll-x">
                     <div class="ba-1">
-                        <div class="texto-vertical">HEADER1</div>
+                        <div class="texto-vertical sticky">HEADER1</div>
                         <div></div>
                     </div>
                     <div class="ba-1">
-                        <div class="texto-vertical">HEADER2</div>
+                        <div class="texto-vertical sticky">HEADER2</div>
+                        <div></div>
+                    </div>
+                    <div class="ba-1">
+                        <div class="texto-vertical sticky">HEADER3</div>
+                        <div></div>
+                    </div>
+                    <div class="ba-1">
+                        <div class="texto-vertical sticky">HEADER4</div>
+                        <div></div>
+                    </div>
+                    <div class="ba-1">
+                        <div class="texto-vertical sticky">HEADER5</div>
+                        <div></div>
+                    </div>
+                    <div class="ba-1">
+                        <div class="texto-vertical sticky">HEADER6</div>
                         <div></div>
                     </div>
                 </div>
                 <div class="ba-1 box-2">
                     <div class="scroll-y">
                         <div class="ba-1">
-                            <div class="texto-horizon">HEADER1</div>
+                            <div class="texto-horizon sticky">HEADER1</div>
                             <div class="box-2-sm"></div>
                         </div>
                         <div class="ba-1">
-                            <div class="texto-horizon">HEADER2</div>
+                            <div class="texto-horizon sticky">HEADER2</div>
                             <div class="box-2-sm"></div>
                         </div>
                         <div class="ba-1">
-                            <div class="texto-horizon">HEADER3</div>
+                            <div class="texto-horizon sticky">HEADER3</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                        <div class="ba-1">
+                            <div class="texto-horizon sticky">HEADER4</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                        <div class="ba-1">
+                            <div class="texto-horizon sticky">HEADER5</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                        <div class="ba-1">
+                            <div class="texto-horizon sticky">HEADER6</div>
                             <div class="box-2-sm"></div>
                         </div>
                     </div>
                     <div class="scroll-y">
                         <div class="ba-1">
-                            <div class="texto-horizon">HEADER1</div>
+                            <div class="texto-horizon sticky">HEADER1</div>
                             <div class="box-2-sm"></div>
                         </div>
                         <div class="ba-1">
-                            <div class="texto-horizon">HEADER2</div>
+                            <div class="texto-horizon sticky">HEADER2</div>
                             <div class="box-2-sm"></div>
                         </div>
                         <div class="ba-1">
-                            <div class="texto-horizon">HEADER3</div>
+                            <div class="texto-horizon sticky">HEADER3</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                        <div class="ba-1">
+                            <div class="texto-horizon sticky">HEADER4</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                        <div class="ba-1">
+                            <div class="texto-horizon sticky">HEADER5</div>
+                            <div class="box-2-sm"></div>
+                        </div>
+                        <div class="ba-1">
+                            <div class="texto-horizon sticky">HEADER6</div>
                             <div class="box-2-sm"></div>
                         </div>
                     </div>
                 </div>
-                <div class="ba-1">5</div>
-                <div class="ba-1">6</div>
-                <div class="ba-1">7</div>
-                <div class="ba-1">8</div>
-                <div class="ba-1">9</div>
-                <div class="ba-1">10</div>
-            </div>
-            <div class="ba-1 footer">
-                <button class="btn cancel">취소</button>
-                <button class="btn default">확인</button>
+                <div class="ba-1 box-3">5</div>
+                <div class="ba-1 box-3">6</div>
+                <div class="ba-1 box-3">7</div>
+                <div class="ba-1 box-3">8</div>
+                <div class="ba-1 box-3">9</div>
+                <div class="ba-1 box-3">10</div>
+            </section>
+            <footer class="ba-1 footer">
+                <div>
+                    <button class="btn btn-default">취소</button>
+                </div>
+                <div>
+                    <button class="btn btn-confirm">확인</button>
+                </div>
+            </footer>
+        </div>
+
+        <div class="modal-box" v-if="isModal">
+            <div class="ba-1 modal-content">
+                <header class="modal-header">
+                    Modal Box
+                    <div class="modal-close-btn-box">
+                        <button class="btn btn-default" @click="isModal=false">X</button>
+                    </div>
+                </header>
+                <section class="modal-section"></section>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'homework',
+    data(){
+        return {
+            isModal: false
+        }
+    },
+    methods: {
+        openModal () {
+            this.isModal = true
+        }
+    },
+}
+</script>
+
 <style lang="scss" scoped>
 /* 
 1. grid 안쓰고 레이아웃을 만드는게 첫번째 과제 입니다. grid는 나중에 쓸껍니다. 
@@ -117,26 +195,6 @@
 https://www.bestcssbuttongenerator.com/#/0
 이사이트에서 버튼을 만들어서 붙여 넣으세요 
 이런식으로 버튼 css 만 만들어 주는 사이트도 있을정도로 디자인 요소가 강합니다. 
-
-
-2. commit 으로 질문인지, 한탄인지 모르겠지만 그렇게 남기면 저 웃겨 죽습니다. ㅋㅋㅋㅋ
-질문을 하세요 ㅋ 
-이해도를 파악하기 위해서 질문은 필수 입니다. 
-질문이 없으면 다음과 같은 문제가 발생합니다. 
- - 제가 학습자의 현재 상태를 파악하기 힘듭니다. 모르는것이 무엇이고 무엇을 잘못 이해 했는지 정확히 파악할수있어야 
- 그다음 진도나 스터디 방법에 대해서 고민을 할수 있습니다. 
- - 설명을 들을때는 이해 한것 같아도 막상해 보면 막힙니다. 이때 다시 기억을 재생 시켜주는 것이 바로 질문 입니다. 
- 빠른 진도 및 학습 속도를 위해서는 엄청나게 많은 질문이 필요 합니다. 
-
-질문 하실때 만약 제가 틀렸거나 잘못된 방법이거나 본인에게 도움이 안된다고 생각되면 
-반드시 마음을 열고 말해 주세요. 저 보이는 것보다 그렇게 마음이 좁지 않습니다. 
-삐져도 쉽게 풀립니다. 그러니 그런거 생각치 말고 말해 주세요 
-이 스터디의 목적은 둘다 도움이 되기 위한것 입니다. 
-어느 한쪽이 도움이 안되기 시작한다면 반드시 솔직하게 서로 말해서 방향을 찾아야 합니다. 
-
-궁금한것이나 안되는 것을 연락으로 질문하기 힘들거나 정 껄끄러우면 여기 주석으로 남겨 주세요. 
-답변을 달아 드리겠습니다. 
-
 
 3. 위에 설명한것의 부연설명으로 단일 선택자를 사용하는경우 예> .ba-1  
 이 css 는 반드시 적용되야 하기 때문에 보통 다음과 같이 미리 적어 주는것이 좋습니다. 
@@ -234,16 +292,19 @@ text-align: center 를 header 에 넣어 주거나
 absolute 나  relative 에서 기본으로 돌아가는 경우에만 사용 합니다. 
 
 */
-.ba-1 {
-    border: 1px solid black;
-}
 
 .header {
     height: 30px;
-    position: static;
+    line-height: 30px;
+    text-align: center;
+    .modal-btn-box {
+        position: absolute;
+        width: 50px;
+        float: left;
+    }
 }
 
-.body {
+.custom-section {
     height: 400px;
     position: relative;
     overflow: auto;
@@ -251,10 +312,16 @@ absolute 나  relative 에서 기본으로 돌아가는 경우에만 사용 합�
 
 .footer {
     height: 30px;
-    position: static;
+    > div {
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 3px 5px;
+        display: inline-block;
+    }
 }
 
-.box-1{
+.box-1 {
     > div {
         width: 80vw;
         height: 100px;
@@ -263,7 +330,7 @@ absolute 나  relative 에서 기본으로 돌아가는 경우에만 사용 합�
     }
 }
 
-.box-2{
+.box-2 {
     > div {
         width: 50%;
         height: 150px;
@@ -272,6 +339,10 @@ absolute 나  relative 에서 기본으로 돌아가는 경우에만 사용 합�
     .box-2-sm {
         height: 100px;
     }
+}
+
+.box-3 {
+    height: 100px;
 }
 
 .scroll-x {
@@ -284,6 +355,12 @@ absolute 나  relative 에서 기본으로 돌아가는 경우에만 사용 합�
     overflow: hidden;
     overflow-y: scroll;
     white-space: nowrap;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 .texto-vertical {
@@ -300,19 +377,72 @@ absolute 나  relative 에서 기본으로 돌아가는 경우에만 사용 합�
 }
 
 .btn {
-  border: black;
-  border-radius: 4px;
-  padding: 1px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: small;
-  .cancel {
-      background-color: gray;
-  }
-  .default {
-      background-color: blue;
-  }
+    width: 100%;
+    height: 100%;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	padding: 5px 1px;
+	text-decoration:none;
+}
+.btn-default {
+    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    background-color:#f9f9f9;
+    color:#666666;
+    border:1px solid #dcdcdc;
+    text-shadow:0px 1px 0px #ffffff;
+}
+.btn-default:hover {
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
 }
 
+.btn-confirm {
+    background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+    background-color:#3d94f6;
+    color:#ffffff;
+    border:1px solid #337fed;
+    text-shadow:0px 1px 0px #1570cd;
+}
+.btn-confirm:hover {
+	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+	background-color:#1e62d0;
+}
+
+.modal-box {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+        height: 50%;
+        .modal-header {
+            width: 100%;
+            height: 10px;
+            .modal-close-btn-box {
+                width: 20px;
+                float: right;
+            }
+        }
+        .modal-section {
+            width: 100%;
+            height: 100%;
+        }                    
+    }
+}
 </style>
