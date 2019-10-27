@@ -2,9 +2,9 @@
     <div>
         <div>
             <header class="header ba-1">
-                <!-- <div class="modal-btn-box"> -->
+                <div class="modal-btn-box">
                     <button class="btn btn-default" @click="isModal=true">modal</button>
-                <!-- </div> -->
+                </div>
                 HEADER
             </header>
             <section class="custom-section">
@@ -327,8 +327,8 @@ float: left;
 이건 모달 가운데 정렬 할때와 같습니다. 
 
 솔루션 2 
-버튼만 있다고 가정 하겠습니다. .modal-btn-box 이건 없는 걸로 취급 
-이러면 문제가 버튼이 너무 커집니다. 
+버튼만 있다고 가정 하겠습니다. .modal-btn-box 없다고 가정 합니다. 
+이때 문제가 버튼이 너무 커집니다. 
 .btn {
     width: 100%;
     height: 100%;
@@ -336,6 +336,8 @@ float: left;
 
 이 두개를 삭제 합니다. 이제 보니 있으면 안되는 게 기본으로 들어가 있네요 
 width, height 는 필요시 나중에 추가하는 형태로 갑니다. 
+.full-width{width: 100%;}
+.full-height{height: 100%;}
 
 저 두개를 빼면 버튼이 작게 됩니다. 이 상테에서 버튼의 크기는 padding 으로 조절 합니다. 
 
