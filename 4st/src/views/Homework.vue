@@ -375,13 +375,13 @@ margin: 0 auto;
 transform: translate(0, -50%);
 */
 .header {
-    height: 30px;
-    line-height: 30px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
     .modal-btn-box {
-        position: absolute;
         width: 50px;
         float: left;
+        line-height: 50px;
     }
 }
 
@@ -392,12 +392,12 @@ transform: translate(0, -50%);
 }
 
 .footer {
-    height: 30px;
+    height: 50px;
     > div {
         width: 50%;
         height: 100%;
         box-sizing: border-box;
-        padding: 3px 5px;
+        padding: 10px;
         display: inline-block;
     }
 }

@@ -6,7 +6,8 @@
       <router-link to="/music">Music</router-link> | 
       <router-link to="/css">Css</router-link> | 
       <router-link to="/css2">Css2</router-link> | 
-      <router-link to="/homework">Homework</router-link>
+      <router-link to="/homework">Homework</router-link> | 
+      <router-link to="/homework2">Homework2</router-link>
     </div>
     <router-view/>
   </div>

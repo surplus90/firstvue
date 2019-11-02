@@ -40,6 +40,11 @@ export default new Router({
       path: '/homework',
       name: 'homework',
       component: () => import('./views/Homework.vue')
+    },
+    {
+      path: '/homework2',
+      name: 'homework2',
+      component: () => import('./views/Homework2.vue')
     }
   ]
 })
