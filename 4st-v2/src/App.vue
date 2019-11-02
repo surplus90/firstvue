@@ -6,6 +6,7 @@
       <router-link to="/music">Music</router-link> | 
       <router-link to="/css">Css</router-link> | 
       <router-link to="/css2">Css2</router-link> | 
+      <router-link to="/css3">Css3</router-link> | 
       <router-link to="/homework">Homework</router-link>
     </div>
     <router-view/>
