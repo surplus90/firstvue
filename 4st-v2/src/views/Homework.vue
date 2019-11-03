@@ -27,7 +27,7 @@
                 <div class="box-1 scroll-x x-mandatory-scroll-snapping">
                     <div class="bd-charcoal">
                         <div class="row-full fs-11 ml-05 texto-vertical sticky">HEADER1</div>
-                        <div></div>
+                        <div>1</div>
                     </div>
                     <div class="bd-charcoal">
                         <div class="row-full fs-11 ml-05 texto-vertical sticky">HEADER2</div>
@@ -214,6 +214,20 @@ flex 의 최대 장점은 자식이 늘어 난다고 해서 레이아웃이 깨�
 추가 과제는 다음과 같습니다. 
 1. 모달을 width: 250px; 으로 고정하고 마진 으로 중앙 정렬이 아닌 
 transform: translate 을 이용한 방법으로 중앙 정렬 해보세요 
+
+2. height: 100px; 을 인라인 스타일로 많이 사용했는데 이련경우 class 로 하는것이 좋습니다. 
+common.css 보면 .hp-60 {height: 60px;} 이런식으로 되어 있습니다. 
+이페이지에서 .hp-100 {height: 100px;} 을 추가 하고 코드를 변경해 보세요 
+
+3. <div class="box-1 scroll-x x-mandatory-scroll-snapping"> 가로 스크롤 3번째 를 보면 
+화면 상에 아래 부분에 공백이 생깁니다. 
+이 공백을 없에 보세요 아래 처럼 빈 div 안에 문자를 넣으면 더욱 명확하게 왜 공백이 생기는지 알수 있습니다. 
+<div class="bd-charcoal">
+    <div class="row-full fs-11 ml-05 texto-vertical sticky">HEADER1</div>
+    <div>1</div>
+</div>
+
+이렇게 넣어보고 공백을 해결해 보세요 샘플로 하나 넣어 놨습니다. 
 
 이건 그냥 도전 안해도 됩니다. 
 2. 풋터 버튼 정렬 과 모달 을 flex 로 해보세요 

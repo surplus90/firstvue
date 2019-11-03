@@ -236,7 +236,8 @@ footer{
     scroll-snap-align:end !important;
 }
 .scroll-x-view > div >.sticky{
-    display: block;
+    /* display: inline-block; */
+    float: left;
     height: 100%;
     width: 5%;
     white-space: normal;
